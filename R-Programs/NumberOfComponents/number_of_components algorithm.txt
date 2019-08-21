@@ -1,0 +1,47 @@
+// Check if both given lists are the same length
+
+if (length(sigma_o) != length(sigma_x)) 
+{
+   print a message saying that both lists need the same length and stop the function
+}
+
+else
+{
+   index = first element in sigma_o
+   components = 0 // This will get the number of components in the given diagram
+
+   go to first element in sigma_x, add it to a list in which we are going to store every number that has been seen in the loop
+
+   look for that element in sigma_o and get the position
+
+   go to the previously obtained position in sigma_x and do three things
+	   - add the number to the list of seen numbers
+       	   - check if that element is equal to the index (maybe with a while loop), if not
+	   - look for that element in sigma_o and get the position
+
+   when we get a match between the current element and the index, stop and check if there are numbers remaining on the list
+   if (there are remaining numbers)
+   {
+	   - add 1 to the component counter.
+	   -make two new lists sigma_o_(2, 3, ...) and sigma_x_(2, 3, ...) and set them equal to the corresponding 
+	   remaining numbers on each list.
+	   - run the function again
+   }
+   else if (there are no remaining numbers)
+   {
+	   - add 1 to the component counter.
+	   - if (the number of components == 1)
+	   {
+		- print a message saying that it is a "knot"
+	   }
+	   - else if (the number of components > 1)
+	   {
+		- print a message saying that it is a "link"
+		- print the number of components in the link
+	   }
+	   - else
+	   {
+		- print a message saying "neither knot or link"
+	   }
+   }
+}
